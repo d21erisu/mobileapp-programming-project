@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private Button about;
     private RecyclerView recyclerView;
-    private animalAdapter adapter;
+    private AnimalAdapter adapter;
     private ArrayList<Animal> mountains;
 
     @Override
