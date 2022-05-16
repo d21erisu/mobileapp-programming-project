@@ -2,39 +2,26 @@ package com.example.project;
 
 public class Animal {
 
-    private String ID;
-    private String Login;
+    private String id;
     private String name;
     private String type;
-    private int weight;
+    private String company;
+    private String location;
+    private String category;
+    private int size;
+    private int cost;
+    private auxdata auxdata;
 
-    public Animal(String ID, String login, String name, String race, String type, int weight) {
-        this.ID = ID;
-        Login = login;
+    public Animal(String id, String name, String type, String company, String location, String category, int size, int cost, com.example.project.auxdata auxdata) {
+        this.id = id;
         this.name = name;
         this.type = type;
-        this.weight = weight;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public String getLogin() {
-        return Login;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
-    public String getType() {
-        return type;
-    }
-
-
-    public int getWeight() {
-        return weight;
+        this.company = company;
+        this.location = location;
+        this.category = category;
+        this.size = size;
+        this.cost = cost;
+        this.auxdata = auxdata;
     }
 }
+
