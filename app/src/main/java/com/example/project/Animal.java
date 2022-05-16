@@ -19,4 +19,32 @@ public class Animal {
         this.diet = diet;
         this.weight = weight;
     }
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getLogin() {
+        return Login;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getRace() {
+        return race;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getDiet() {
+        return diet;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
 }
