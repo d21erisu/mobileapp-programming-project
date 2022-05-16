@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private Button about;
     private RecyclerView recyclerView;
     private AnimalAdapter adapter;
-    private ArrayList<Animal> mountains;
+    private ArrayList<Animal> animals;
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         setSupportActionBar(toolbar);
 
         recyclerView = findViewById(R.id.recyclerView);
-        mountains = new ArrayList<Animal>();
+        animals = new ArrayList<Animal>();
 
         new JsonTask(this).execute(JSON_URL);
 
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         Gson gson = new Gson();
         Type type = new TypeToken<ArrayList<Animal>>() {}.getType();
-        mountains = gson.fromJson(json, type);
-        adapter = new AnimalAdapter(mountains);
+        animals = gson.fromJson(json, type);
+        adapter = new AnimalAdapter(animals);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         adapter.notifyDataSetChanged();
