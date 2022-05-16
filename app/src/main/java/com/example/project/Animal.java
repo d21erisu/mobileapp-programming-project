@@ -5,7 +5,6 @@ public class Animal {
     private String ID;
     private String Login;
     private String name;
-    private String race;
     private String type;
     private int weight;
 
@@ -13,7 +12,6 @@ public class Animal {
         this.ID = ID;
         Login = login;
         this.name = name;
-        this.race = race;
         this.type = type;
         this.weight = weight;
     }
@@ -30,9 +28,6 @@ public class Animal {
         return name;
     }
 
-    public String getRace() {
-        return race;
-    }
 
     public String getType() {
         return type;
