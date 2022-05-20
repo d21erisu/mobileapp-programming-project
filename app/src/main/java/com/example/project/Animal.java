@@ -12,7 +12,7 @@ public class Animal {
     private int cost;
     private auxdata auxdata;
 
-    public Animal(String id, String name, String type, String company, String location, String category, int size, int cost, com.example.project.auxdata auxdata) {
+    public Animal(String id, String name, String type, String company, String location, String category, int size, int cost) {
         this.id = id;
         this.name = name;
         this.type = type;

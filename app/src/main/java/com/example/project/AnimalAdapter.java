@@ -24,12 +24,13 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     @Override
     public void onBindViewHolder(@NonNull AnimalViewHolder holder, int position) {
         Animal animal = animals.get(position);
+
         holder.animal_id.setText(animal.getId());
         holder.animal_name.setText(animal.getName());
         holder.animal_company.setText(animal.getCompany());
         holder.animal_location.setText(animal.getLocation());
         holder.animal_category.setText(animal.getCategory());
-        holder.animal_size.setText(animal.getSize());
+       // holder.animal_size.setText(animal.getSize().toString());
 
     }
 
@@ -39,21 +40,21 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     }
 
     public class AnimalViewHolder extends RecyclerView.ViewHolder {
-        private TextView animal_id;
-        private TextView animal_name;
-        private TextView animal_company;
-        private TextView animal_location;
-        private TextView animal_category;
-        private TextView animal_size;
+       private TextView animal_id;
+       private TextView animal_name;
+       private TextView animal_company;
+       private TextView animal_location;
+       private TextView animal_category;
+       //private TextView animal_size;
 
         public AnimalViewHolder(@NonNull View itemView) {
             super(itemView);
+            animal_name=itemView.findViewById(R.id.animal_name);
             animal_id=itemView.findViewById(R.id.animal_id);
-            animal_name=itemView.findViewById(R.id.animal_size);
+          //  animal_name=itemView.findViewById(R.id.animal_size);
             animal_company=itemView.findViewById(R.id.animal_company);
             animal_location=itemView.findViewById(R.id.animal_location);
             animal_category=itemView.findViewById(R.id.animal_category);
-            animal_size=itemView.findViewById(R.id.animal_size);
 
         }
     }
