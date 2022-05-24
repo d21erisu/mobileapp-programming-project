@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private AnimalAdapter adapter;
     private ArrayList<Animal> animals;
 
-    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=d21erisu";
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
     // "https://mobprog.webug.se/json-api?login=brom"
 
     @Override
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         setSupportActionBar(toolbar);
 
         recyclerView = findViewById(R.id.recyclerView);
-        animals = new ArrayList<Animal>();
+        animals = new ArrayList<>();
 
         new JsonTask(this).execute(JSON_URL);
 
