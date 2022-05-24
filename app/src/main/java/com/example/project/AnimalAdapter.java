@@ -26,10 +26,10 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         Animal animal = animals.get(position);
 
         holder.animal_id.setText(animal.getId());
-        holder.animal_name.setText(animal.getName());
-        holder.animal_company.setText(animal.getCompany());
-        holder.animal_location.setText(animal.getLocation());
-        holder.animal_category.setText(animal.getCategory());
+        holder.animal_name.setText("Name: " + animal.getName());
+        holder.animal_company.setText("Diet: " + animal.getCompany());
+        holder.animal_location.setText("Location: " + animal.getLocation());
+        holder.animal_category.setText("Type: " + animal.getCategory());
 
 
     }
