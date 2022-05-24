@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private AnimalAdapter adapter;
     private ArrayList<Animal> animals;
 
-    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=brom";
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=d21erisu";
     // "https://mobprog.webug.se/json-api?login=brom"
 
     @Override

@@ -8,9 +8,6 @@ public class Animal {
     String company;
     String location;
     String category;
-    int size;
-    int cost;
-    auxdata auxdata;
 
     public String getId() {
         return id;
@@ -34,18 +31,6 @@ public class Animal {
 
     public String getCategory() {
         return category;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
-    public com.example.project.auxdata getAuxdata() {
-        return auxdata;
     }
 
 }

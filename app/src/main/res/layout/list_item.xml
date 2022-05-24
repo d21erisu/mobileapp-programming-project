@@ -9,10 +9,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/animal_name"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/animal_company"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
         android:text="ID"
         />
 
@@ -20,61 +23,55 @@
         android:id="@+id/animal_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/animal_size"
+
+        app:layout_constraintTop_toBottomOf="@+id/animal_id"
+        app:layout_constraintBottom_toTopOf="@id/animal_category"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:text="name"
-        />
-
-
-    <TextView
-        android:id="@+id/animal_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/animal_company"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animal_name"
-
-        android:text="size"
-        />
-
-    <TextView
-        android:id="@+id/animal_company"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/animal_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:text="company"
-        />
-
-    <TextView
-        android:id="@+id/animal_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="location"
         />
 
     <TextView
         android:id="@+id/animal_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/animal_name"
+        app:layout_constraintBottom_toTopOf="@id/animal_company"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animal_location"
         android:text="category"
         />
+    <TextView
+        android:id="@+id/animal_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+
+        app:layout_constraintTop_toBottomOf="@+id/animal_category"
+        app:layout_constraintBottom_toTopOf="@id/animal_location"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="company"
+        />
+
+
+
+    <TextView
+        android:id="@+id/animal_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/animal_company"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="location"
+        />
+
 
 
 
