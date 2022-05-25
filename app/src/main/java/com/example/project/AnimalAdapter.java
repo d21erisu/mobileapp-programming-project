@@ -14,6 +14,10 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
     private List<Animal> animals;
     public AnimalAdapter(List<Animal> animals) {this.animals = animals;}
 
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
+    }
+
     @NonNull
     @Override
     public AnimalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

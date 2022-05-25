@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private Button about;
     private RecyclerView recyclerView;
     private AnimalAdapter adapter;
-    private ArrayList<Animal> animals;
+    private ArrayList<Animal> animals=new ArrayList<>();
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=d21erisu";
     // "https://mobprog.webug.se/json-api?login=brom"
@@ -34,10 +34,11 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        recyclerView = findViewById(R.id.recyclerView);
-        animals = new ArrayList<>();
+        adapter = new AnimalAdapter(animals);
 
-        new JsonTask(this).execute(JSON_URL);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         about=findViewById(R.id.aboutbutton);
         about.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
             }
         });
-
+        new JsonTask(this).execute(JSON_URL);
     }
 
     @Override
@@ -57,9 +58,8 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         Gson gson = new Gson();
         Type type = new TypeToken<ArrayList<Animal>>() {}.getType();
         animals = gson.fromJson(json, type);
-        adapter = new AnimalAdapter(animals);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        adapter.setAnimals(animals);
         adapter.notifyDataSetChanged();
 
     }
