@@ -2,15 +2,13 @@
 Jag gjorde ingen skiss men innan jag började att koda så hade jag en uppfattning om hur jag ville att det skulle se ut. Var knappen skulle vara osv.
 
 Det första jag gjorde var att skapa en recyclerview, så jag la till en recyclerview i min activity main xml fil. Därefter skapade jag en adapter till
-min recyclerview och skapade en listItem xml fil som agerar mall för hur varje "instans/ruta" i recycler wieven ska se ut och vad den ska ha för innehåll. 
-Jag gjorde ett par tewtviews som ska visa upp de olika attributen från mina objekt.
+min recyclerview och skapade en listItem xml fil som agerar mall för hur varje "instans/ruta" i recycler viewen ska se ut och vad den ska ha för innehåll. 
+Jag gjorde ett par tewtviews i listitemxml som ska visa upp de olika attributen från mina objekt.
 
-
-
-I adaptern har jag en metod setAnimals som "updaterar" listan som skapas i mainactivity så att det är faktiska värden som matas in i recyclerwieven.
-Metoden onBindViewHolder sätter in attributen som text i recyclerviewen.
-Metoden AnimalViewHOlder kopplar ett visst attribut till en vis textview i item list.
-Min adapter klass ser ut som följande:
+I adaptern har jag en metod "setAnimals" som "updaterar" listan som skapas i "mainactivity"så att det är faktiska värden som matas in i recyclerviewen.
+Metoden "onBindViewHolder" sätter in attributen som text i recyclerviewen.
+Metoden "AnimalViewHOlder" kopplar ett visst attribut till en viss textview i itemlistxml.
+Min adapter-klass ser ut som följande:
 ```
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder>{
     private List<Animal> animals;
@@ -59,7 +57,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
 }
 
 ```
-Jag skapade en knapp som när den aktiveras startar en ny aktivtet med en about sida.
+Jag skapade en knapp som när den aktiveras startar en ny aktivtet med en "about" sida.
 Den nya aktiviteten har en intern webview som visar upp en HTML sida med information om användarna. 
 Nedan är koden gällande knappen som startar aktiviteten:
 ```
@@ -73,7 +71,7 @@ about=findViewById(R.id.aboutbutton);
             }
         });
 ```
-Samt koden i secondActivity som displayer min HTML fil via en webview
+Samt koden i "secondActivity" som visar min HTML fil via en webview
 ```
 public class SecondActivity extends AppCompatActivity {
     private WebView webView;
@@ -91,19 +89,19 @@ public class SecondActivity extends AppCompatActivity {
     }
 }
 ```
-För att hämta min JSON data och få den till min array använda jag mig av en jason klass som lärarna tillhandahöll. 
+För att hämta min JSON data och få den till min array använde jag mig av en jason klass som lärarna tillhandahöll. 
 För att hämta datan så matade jag in länken till min JSON data i en string och lät Jsontasken parsa datan från länken. Jag matar in den parsade datan
-i min array och satte arraylisten till min adapter så att recyclerviewen displayar datan från objekten. 
+i min array och satte arraylisten till min adapter så att recyclerviewen displayar attributen från objekten. 
 För att kunna hämta data från länken behövde jag aktivera internet access i android manifestet med följande rad kod:
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 ```
-Nedan är raden kod som tillät jsontaskklassen att hämta min jsondata. 
+Nedan är raden kod som tillät jsontask-klassen att hämta min jsondata. 
 ```
 private final String JSON_URL = "https://mobprog.webug.se/json-api?login=d21erisu";
 new JsonTask(this).execute(JSON_URL);
 ```
-Följande kod sätter in min JSondata till min lista och sätter listan i adaptern till min recyclerview. Jag kör också notifydatachanged ().
+Följande kod sätter in min JSondata till min lista och sätter listan i adaptern till min recyclerview.
 ```
   public void onPostExecute(String json) {
 
@@ -117,7 +115,7 @@ Följande kod sätter in min JSondata till min lista och sätter listan i adapte
     }
 ```
 
-Min jsondata bestod av djur med olika attribut. Objekten är olika sorters djur som har attribut som tex, ras och diet. 
+Min jsondata bestod av djur med olika attribut. Objekten är olika sorters djur som har attribut som tex: namn, ras och diet. 
 Jag bestämde mig för att mina objekt skulle bestå av just detta dels för att vi var begränsade angående vad för sorts objekt det fick vara samt Marcus
 svamp-exempel att man kunde prata om var de befann sig osv. 
 Djuren har attributen ID, namn, diet, typ och plats. Längst ner i projektet finns en bild på min "tabell" med data.
